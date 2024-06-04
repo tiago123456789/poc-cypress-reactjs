@@ -33,7 +33,7 @@ jobs:
 
       - name: Print output here
         run: |
-          echo ${{join(steps.e2e_tests.outputs.crypress_logs, '\n')}}
+          echo ${{join(steps.e2e_tests.outputs.*, '\n')}}
 
 
 
