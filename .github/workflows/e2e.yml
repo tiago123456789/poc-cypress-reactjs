@@ -22,16 +22,19 @@ jobs:
         run: npm install
 
       - name: Setup webapp before run e2e tests
-        run: |
-          ls -l
-          docker compose up -d
-
+        run: docker compose up -d
 
       - name: Run e2e tests
+        id: e2e_tests
         uses: cypress-io/github-action@v4
         with:
-          command: npx cypress run
+          command: echo "crypress_logs=$(npx cypress run)\n" >> $GITHUB_OUTPUT 
           browser: chrome
+
+      - name: Print output here
+        run: |
+          echo ${{join(steps.e2e_tests.outputs.crypress_logs, '\n')}}
+
 
 
 
