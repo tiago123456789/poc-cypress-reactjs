@@ -25,6 +25,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <a hrefLang="#">Click here</a>
         <a
           id="link"
           className="App-link"
