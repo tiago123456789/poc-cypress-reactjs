@@ -20,7 +20,7 @@ jobs:
 
 
       - name: Run e2e tests
-        ses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v4
         with:
           command: npx cypress run
           browser: chrome
