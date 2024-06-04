@@ -20,7 +20,8 @@ jobs:
 
 
       - name: Run e2e tests
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6
         with:
-          command: npm install && npx cypress run
-          browser: chrome
+          build: npm install
+          start: npm run e2e:run
+
