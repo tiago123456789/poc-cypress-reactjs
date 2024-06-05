@@ -28,8 +28,13 @@ jobs:
         id: e2e_tests
         uses: cypress-io/github-action@v4
         with:
-          command: npx cypress run
-          browser: chrome
+          command: echo "::set-output name=CRYPRESS_LOGS::$(npx cypress run)"
+          browser: chrome 
+
+      - name: Print output
+        run: echo "${{ steps.e2e_tests.outputs.CRYPRESS_LOGS }}"
+
+        
 
 
 
