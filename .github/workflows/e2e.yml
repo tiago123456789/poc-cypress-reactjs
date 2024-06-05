@@ -28,11 +28,10 @@ jobs:
         id: e2e_tests
         uses: cypress-io/github-action@v4
         with:
-          command: npx cypress run > ./cypress_logs.txt
+          command: |
+            npx cypress run > ./cypress_logs.txt
+            cat cypress_logs.txt
           browser: chrome 
-
-      - name: Print output
-        run: cat cypress_logs.txt
 
 
 
